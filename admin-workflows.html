@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/ETI_icon.png"/>
+<link rel="apple-touch-icon" href="/ETI_icon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workflows - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:'#1e3a5f','brand-light':'#2a5080',teal:'#0d9488','teal-light':'#14b8a6'},fontFamily:{display:['Manrope','sans-serif'],body:['Inter','sans-serif']}}}}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen">
+<!-- Unified Top Nav -->
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2 flex-shrink-0">
+    <span class="material-symbols-outlined text-teal-light">hub</span>
+    <span class="font-display font-bold text-lg">Pacific Consulting Group</span>
+  </a>
+  <div class="flex items-center gap-1.5">
+    <a href="service-request" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">description</span>Service Request</a>
+    <a href="status" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">search</span>Check Status</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="portal-dashboard" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">person</span>Client Portal</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="./" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 text-white font-medium text-sm"><span class="material-symbols-outlined text-sm">admin_panel_settings</span>Admin Panel</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="login" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">login</span>Sign In</a>
+  </div>
+</nav>
+
+<div class="flex min-h-[calc(100vh-52px)]">
+  <aside class="w-56 bg-white border-r border-gray-100 py-4 flex-shrink-0">
+    <div class="px-4 mb-2"><p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Administration</p></div>
+    <nav class="space-y-0.5 px-2">
+      <a href="./" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">dashboard</span> Dashboard</a>
+      <a href="admin-workflows" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-brand/5 text-brand font-medium text-sm"><span class="material-symbols-outlined text-lg">account_tree</span> Workflows</a>
+      <a href="admin-builder" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">construction</span> Builder</a>
+      <a href="admin-tasks" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">task_alt</span> Tasks</a>
+      <a href="admin-analytics" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">analytics</span> Analytics</a>
+      <a href="admin-settings" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">settings</span> Settings</a>
+    </nav>
+  </aside>
+
+  <main class="flex-1 p-6 overflow-auto">
+    <div class="max-w-6xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="font-display text-2xl font-bold text-gray-900">Active Workflows</h1>
+          <p class="text-sm text-gray-500">18 active workflows across 5 types</p>
+        </div>
+        <button class="bg-brand text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-brand-light transition flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">add</span> New Workflow
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex items-center gap-3 mb-4">
+        <select class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
+          <option>All Types</option>
+          <option>Client Onboarding</option>
+          <option>Proposal Pipeline</option>
+          <option>Document Review</option>
+          <option>Project Approval</option>
+          <option>Compliance Audit</option>
+        </select>
+        <select class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
+          <option>All Statuses</option>
+          <option>On Track</option>
+          <option>At Risk</option>
+          <option>Overdue</option>
+          <option>New</option>
+          <option>Completed</option>
+        </select>
+        <select class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
+          <option>All Staff</option>
+          <option>Sarah Chen</option>
+          <option>Marcus Rivera</option>
+          <option>Aisha Patel</option>
+          <option>James O'Brien</option>
+          <option>Diana Morales</option>
+          <option>Tyler Washington</option>
+        </select>
+        <div class="flex-1"></div>
+        <div class="flex items-center border border-gray-200 rounded-lg bg-white px-3 py-2">
+          <span class="material-symbols-outlined text-gray-400 text-sm mr-2">search</span>
+          <input type="text" placeholder="Search workflows..." class="text-sm border-0 outline-none bg-transparent w-48"/>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr class="text-xs text-gray-500 uppercase tracking-wider">
+              <th class="text-left px-4 py-3 font-semibold w-8"><input type="checkbox" class="rounded border-gray-300"/></th>
+              <th class="text-left px-4 py-3 font-semibold">Reference</th>
+              <th class="text-left px-4 py-3 font-semibold">Type</th>
+              <th class="text-left px-4 py-3 font-semibold">Client</th>
+              <th class="text-left px-4 py-3 font-semibold">Current Stage</th>
+              <th class="text-left px-4 py-3 font-semibold">Days</th>
+              <th class="text-left px-4 py-3 font-semibold">Assigned To</th>
+              <th class="text-left px-4 py-3 font-semibold">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-001</td>
+              <td class="px-4 py-3">Client Onboarding</td>
+              <td class="px-4 py-3">Meridian Holdings</td>
+              <td class="px-4 py-3">Contract Review</td>
+              <td class="px-4 py-3">12</td>
+              <td class="px-4 py-3">Sarah Chen</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-002</td>
+              <td class="px-4 py-3">Proposal Pipeline</td>
+              <td class="px-4 py-3">Apex Manufacturing</td>
+              <td class="px-4 py-3">Client Review</td>
+              <td class="px-4 py-3">8</td>
+              <td class="px-4 py-3">Marcus Rivera</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-003</td>
+              <td class="px-4 py-3">Compliance Audit</td>
+              <td class="px-4 py-3">Coastal Health Systems</td>
+              <td class="px-4 py-3">Fieldwork</td>
+              <td class="px-4 py-3 text-amber-500 font-medium">21</td>
+              <td class="px-4 py-3">Aisha Patel</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded">At Risk</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-004</td>
+              <td class="px-4 py-3">Client Onboarding</td>
+              <td class="px-4 py-3">Summit Logistics</td>
+              <td class="px-4 py-3">Needs Assessment</td>
+              <td class="px-4 py-3">3</td>
+              <td class="px-4 py-3">James O'Brien</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-005</td>
+              <td class="px-4 py-3">Document Review</td>
+              <td class="px-4 py-3">Brightfield Properties</td>
+              <td class="px-4 py-3">Review</td>
+              <td class="px-4 py-3">5</td>
+              <td class="px-4 py-3">Diana Morales</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-006</td>
+              <td class="px-4 py-3">Project Approval</td>
+              <td class="px-4 py-3">NovaTech Solutions</td>
+              <td class="px-4 py-3">Finance Approval</td>
+              <td class="px-4 py-3 text-red-500 font-medium">14</td>
+              <td class="px-4 py-3">Tyler Washington</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-red-600 bg-red-50 px-2 py-0.5 rounded">Overdue</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-007</td>
+              <td class="px-4 py-3">Proposal Pipeline</td>
+              <td class="px-4 py-3">GreenLeaf Organics</td>
+              <td class="px-4 py-3">Proposal Draft</td>
+              <td class="px-4 py-3">6</td>
+              <td class="px-4 py-3">Marcus Rivera</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-008</td>
+              <td class="px-4 py-3">Client Onboarding</td>
+              <td class="px-4 py-3">Pinnacle Finance</td>
+              <td class="px-4 py-3">Kickoff</td>
+              <td class="px-4 py-3">18</td>
+              <td class="px-4 py-3">Sarah Chen</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded">Completed</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-009</td>
+              <td class="px-4 py-3">Compliance Audit</td>
+              <td class="px-4 py-3">Meridian Holdings</td>
+              <td class="px-4 py-3">Preparation</td>
+              <td class="px-4 py-3">2</td>
+              <td class="px-4 py-3">Aisha Patel</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-010</td>
+              <td class="px-4 py-3">Document Review</td>
+              <td class="px-4 py-3">Apex Manufacturing</td>
+              <td class="px-4 py-3">Approval</td>
+              <td class="px-4 py-3">9</td>
+              <td class="px-4 py-3">Diana Morales</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-011</td>
+              <td class="px-4 py-3">Project Approval</td>
+              <td class="px-4 py-3">Coastal Health Systems</td>
+              <td class="px-4 py-3">Manager Review</td>
+              <td class="px-4 py-3">4</td>
+              <td class="px-4 py-3">Sarah Chen</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-012</td>
+              <td class="px-4 py-3">Proposal Pipeline</td>
+              <td class="px-4 py-3">Summit Logistics</td>
+              <td class="px-4 py-3">Lead</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3">James O'Brien</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">New</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-013</td>
+              <td class="px-4 py-3">Client Onboarding</td>
+              <td class="px-4 py-3">Brightfield Properties</td>
+              <td class="px-4 py-3">Proposal</td>
+              <td class="px-4 py-3">7</td>
+              <td class="px-4 py-3">Marcus Rivera</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-014</td>
+              <td class="px-4 py-3">Compliance Audit</td>
+              <td class="px-4 py-3">NovaTech Solutions</td>
+              <td class="px-4 py-3">Reporting</td>
+              <td class="px-4 py-3">16</td>
+              <td class="px-4 py-3">Aisha Patel</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-015</td>
+              <td class="px-4 py-3">Document Review</td>
+              <td class="px-4 py-3">GreenLeaf Organics</td>
+              <td class="px-4 py-3">Draft</td>
+              <td class="px-4 py-3">2</td>
+              <td class="px-4 py-3">Tyler Washington</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-016</td>
+              <td class="px-4 py-3">Project Approval</td>
+              <td class="px-4 py-3">Pinnacle Finance</td>
+              <td class="px-4 py-3">Request</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3">Diana Morales</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">New</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-017</td>
+              <td class="px-4 py-3">Proposal Pipeline</td>
+              <td class="px-4 py-3">Meridian Holdings</td>
+              <td class="px-4 py-3">Internal Review</td>
+              <td class="px-4 py-3 text-amber-500 font-medium">10</td>
+              <td class="px-4 py-3">Sarah Chen</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded">At Risk</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-4 py-3"><input type="checkbox" class="rounded border-gray-300"/></td>
+              <td class="px-4 py-3 font-medium text-brand">WF-2024-018</td>
+              <td class="px-4 py-3">Client Onboarding</td>
+              <td class="px-4 py-3">Apex Manufacturing</td>
+              <td class="px-4 py-3">Initial Contact</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3">James O'Brien</td>
+              <td class="px-4 py-3"><span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">New</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="px-5 py-3 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
+          <p>Showing 18 of 18 workflows</p>
+          <div class="flex items-center gap-2">
+            <button class="px-3 py-1 rounded border border-gray-200 text-gray-400">Previous</button>
+            <button class="px-3 py-1 rounded bg-brand text-white">1</button>
+            <button class="px-3 py-1 rounded border border-gray-200 text-gray-400">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

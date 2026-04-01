@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/ETI_icon.png"/>
+<link rel="apple-touch-icon" href="/ETI_icon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Workflows - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:'#1e3a5f','brand-light':'#2a5080',teal:'#0d9488','teal-light':'#14b8a6'},fontFamily:{display:['Manrope','sans-serif'],body:['Inter','sans-serif']}}}}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen">
+<!-- Unified Top Nav -->
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2 flex-shrink-0">
+    <span class="material-symbols-outlined text-teal-light">hub</span>
+    <span class="font-display font-bold text-lg">Pacific Consulting Group</span>
+  </a>
+  <div class="flex items-center gap-1.5">
+    <a href="service-request" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">description</span>Service Request</a>
+    <a href="status" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">search</span>Check Status</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="portal-dashboard" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 text-white font-medium text-sm"><span class="material-symbols-outlined text-sm">person</span>Client Portal</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="./" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">admin_panel_settings</span>Admin Panel</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="login" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">login</span>Sign In</a>
+  </div>
+</nav>
+
+<div class="max-w-6xl mx-auto px-6 py-8">
+  <!-- Welcome Header -->
+  <div class="flex items-center justify-between mb-8">
+    <div>
+      <h1 class="font-display text-2xl font-bold text-gray-900">Welcome back, David</h1>
+      <p class="text-gray-500 text-sm mt-1">Meridian Holdings &mdash; 4 active workflows</p>
+    </div>
+    <a href="service-request" class="bg-brand text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-brand-light transition text-sm flex items-center gap-2">
+      <span class="material-symbols-outlined text-sm">add</span> New Request
+    </a>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="grid grid-cols-4 gap-4 mb-8">
+    <div class="bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-center justify-between mb-2">
+        <span class="material-symbols-outlined text-brand">pending_actions</span>
+        <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded">Active</span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">4</p>
+      <p class="text-xs text-gray-500">Active Workflows</p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-center justify-between mb-2">
+        <span class="material-symbols-outlined text-teal">check_circle</span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">12</p>
+      <p class="text-xs text-gray-500">Completed This Year</p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-center justify-between mb-2">
+        <span class="material-symbols-outlined text-red-500">warning</span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">1</p>
+      <p class="text-xs text-gray-500">Needs Attention</p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-center justify-between mb-2">
+        <span class="material-symbols-outlined text-gray-400">schedule</span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">3.8 days</p>
+      <p class="text-xs text-gray-500">Avg. Completion</p>
+    </div>
+  </div>
+
+  <!-- Workflow Cards -->
+  <div class="mb-6 flex items-center justify-between">
+    <h2 class="font-display text-lg font-bold text-gray-900">Active Workflows</h2>
+    <div class="flex gap-2">
+      <button class="text-xs bg-brand text-white px-3 py-1.5 rounded font-medium">All</button>
+      <button class="text-xs text-gray-500 hover:bg-gray-100 px-3 py-1.5 rounded font-medium">On Track</button>
+      <button class="text-xs text-gray-500 hover:bg-gray-100 px-3 py-1.5 rounded font-medium">At Risk</button>
+    </div>
+  </div>
+
+  <div class="space-y-4 mb-8">
+    <!-- WF-001 -->
+    <a href="portal-detail" class="block bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs font-bold text-brand bg-brand/10 px-2 py-0.5 rounded">WF-2024-001</span>
+            <span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Client Onboarding</h3>
+          <p class="text-sm text-gray-500">Assigned to Sarah Chen &bull; 12 days active</p>
+        </div>
+        <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+      </div>
+      <div class="flex gap-1">
+        <div class="flex-1 h-1.5 bg-teal rounded-l-full"></div>
+        <div class="flex-1 h-1.5 bg-teal"></div>
+        <div class="flex-1 h-1.5 bg-teal"></div>
+        <div class="flex-1 h-1.5 bg-amber-400"></div>
+        <div class="flex-1 h-1.5 bg-gray-200 rounded-r-full"></div>
+      </div>
+      <div class="flex justify-between mt-1.5 text-[10px] text-gray-400">
+        <span>Initial Contact</span><span>Needs Assessment</span><span>Proposal</span><span class="font-bold text-brand">Contract Review</span><span>Kickoff</span>
+      </div>
+    </a>
+
+    <!-- WF-009 -->
+    <a href="portal-detail" class="block bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs font-bold text-brand bg-brand/10 px-2 py-0.5 rounded">WF-2024-009</span>
+            <span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Compliance Audit</h3>
+          <p class="text-sm text-gray-500">Assigned to Aisha Patel &bull; 2 days active</p>
+        </div>
+        <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+      </div>
+      <div class="flex gap-1">
+        <div class="flex-1 h-1.5 bg-amber-400 rounded-l-full"></div>
+        <div class="flex-1 h-1.5 bg-gray-200"></div>
+        <div class="flex-1 h-1.5 bg-gray-200"></div>
+        <div class="flex-1 h-1.5 bg-gray-200 rounded-r-full"></div>
+      </div>
+      <div class="flex justify-between mt-1.5 text-[10px] text-gray-400">
+        <span class="font-bold text-brand">Preparation</span><span>Fieldwork</span><span>Reporting</span><span>Follow-up</span>
+      </div>
+    </a>
+
+    <!-- WF-017 -->
+    <a href="portal-detail" class="block bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs font-bold text-brand bg-brand/10 px-2 py-0.5 rounded">WF-2024-017</span>
+            <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded">At Risk</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Proposal Pipeline</h3>
+          <p class="text-sm text-gray-500">Assigned to Sarah Chen &bull; 10 days active</p>
+        </div>
+        <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+      </div>
+      <div class="flex gap-1">
+        <div class="flex-1 h-1.5 bg-teal rounded-l-full"></div>
+        <div class="flex-1 h-1.5 bg-teal"></div>
+        <div class="flex-1 h-1.5 bg-teal"></div>
+        <div class="flex-1 h-1.5 bg-amber-400"></div>
+        <div class="flex-1 h-1.5 bg-gray-200"></div>
+        <div class="flex-1 h-1.5 bg-gray-200 rounded-r-full"></div>
+      </div>
+      <div class="flex justify-between mt-1.5 text-[10px] text-gray-400">
+        <span>Lead</span><span>Qualification</span><span>Proposal Draft</span><span class="font-bold text-brand">Internal Review</span><span>Client Review</span><span>Close</span>
+      </div>
+    </a>
+
+    <!-- WF-010 -->
+    <a href="portal-detail" class="block bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs font-bold text-brand bg-brand/10 px-2 py-0.5 rounded">WF-2024-010</span>
+            <span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Document Review</h3>
+          <p class="text-sm text-gray-500">Assigned to Diana Morales &bull; 9 days active</p>
+        </div>
+        <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+      </div>
+      <div class="flex gap-1">
+        <div class="flex-1 h-1.5 bg-teal rounded-l-full"></div>
+        <div class="flex-1 h-1.5 bg-teal"></div>
+        <div class="flex-1 h-1.5 bg-amber-400 rounded-r-full"></div>
+      </div>
+      <div class="flex justify-between mt-1.5 text-[10px] text-gray-400">
+        <span>Draft</span><span>Review</span><span class="font-bold text-brand">Approval</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Recent Activity -->
+  <h2 class="font-display text-lg font-bold text-gray-900 mb-4">Recent Activity</h2>
+  <div class="bg-white rounded-xl border border-gray-100 divide-y divide-gray-50">
+    <div class="px-5 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-teal text-sm mt-0.5">check_circle</span>
+      <div>
+        <p class="text-sm text-gray-900"><span class="font-medium">WF-2024-008:</span> Client Onboarding for Pinnacle Finance marked as <span class="text-teal font-medium">Completed</span></p>
+        <p class="text-xs text-gray-400 mt-0.5">March 30, 2026 at 5:00 PM</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-brand text-sm mt-0.5">description</span>
+      <div>
+        <p class="text-sm text-gray-900"><span class="font-medium">WF-2024-001:</span> Contract document uploaded to Contract Review stage</p>
+        <p class="text-xs text-gray-400 mt-0.5">March 28, 2026 at 2:15 PM</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5">warning</span>
+      <div>
+        <p class="text-sm text-gray-900"><span class="font-medium">WF-2024-017:</span> Approaching SLA deadline &mdash; Internal Review delayed</p>
+        <p class="text-xs text-gray-400 mt-0.5">March 28, 2026 at 9:00 AM</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-brand text-sm mt-0.5">person_add</span>
+      <div>
+        <p class="text-sm text-gray-900"><span class="font-medium">WF-2024-009:</span> Compliance Audit initiated &mdash; assigned to Aisha Patel</p>
+        <p class="text-xs text-gray-400 mt-0.5">March 29, 2026 at 10:00 AM</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-teal text-sm mt-0.5">task_alt</span>
+      <div>
+        <p class="text-sm text-gray-900"><span class="font-medium">WF-2024-010:</span> Review stage completed, moved to Approval</p>
+        <p class="text-xs text-gray-400 mt-0.5">March 27, 2026 at 3:30 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center py-6 text-xs text-gray-400">
+  <p>Pacific Consulting Group Workflow Automation System &mdash; Demo by ETI Technology</p>
+</footer>
+</body>
+</html>

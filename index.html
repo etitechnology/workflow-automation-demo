@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/ETI_icon.png"/>
+<link rel="apple-touch-icon" href="/ETI_icon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin Dashboard - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:'#1e3a5f','brand-light':'#2a5080',teal:'#0d9488','teal-light':'#14b8a6'},fontFamily:{display:['Manrope','sans-serif'],body:['Inter','sans-serif']}}}}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen">
+<!-- Unified Top Nav -->
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2 flex-shrink-0">
+    <span class="material-symbols-outlined text-teal-light">hub</span>
+    <span class="font-display font-bold text-lg">Pacific Consulting Group</span>
+  </a>
+  <div class="flex items-center gap-1.5">
+    <a href="service-request" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">description</span>Service Request</a>
+    <a href="status" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">search</span>Check Status</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="portal-dashboard" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">person</span>Client Portal</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="./" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 text-white font-medium text-sm"><span class="material-symbols-outlined text-sm">admin_panel_settings</span>Admin Panel</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="login" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">login</span>Sign In</a>
+  </div>
+</nav>
+
+<div class="flex min-h-[calc(100vh-52px)]">
+  <!-- Sidebar -->
+  <aside class="w-56 bg-white border-r border-gray-100 py-4 flex-shrink-0">
+    <div class="px-4 mb-2">
+      <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Administration</p>
+    </div>
+    <nav class="space-y-0.5 px-2">
+      <a href="./" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-brand/5 text-brand font-medium text-sm">
+        <span class="material-symbols-outlined text-lg">dashboard</span> Dashboard
+      </a>
+      <a href="admin-workflows" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm">
+        <span class="material-symbols-outlined text-lg">account_tree</span> Workflows
+      </a>
+      <a href="admin-builder" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm">
+        <span class="material-symbols-outlined text-lg">construction</span> Builder
+      </a>
+      <a href="admin-tasks" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm">
+        <span class="material-symbols-outlined text-lg">task_alt</span> Tasks
+      </a>
+      <a href="admin-analytics" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm">
+        <span class="material-symbols-outlined text-lg">analytics</span> Analytics
+      </a>
+      <a href="admin-settings" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm">
+        <span class="material-symbols-outlined text-lg">settings</span> Settings
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 overflow-auto">
+    <div class="max-w-6xl">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="font-display text-2xl font-bold text-gray-900">Dashboard</h1>
+          <p class="text-sm text-gray-500">Overview for March 31, 2026</p>
+        </div>
+        <div class="flex gap-2">
+          <select class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
+            <option>Last 7 days</option>
+            <option selected>Last 30 days</option>
+            <option>Last 90 days</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Metric Cards -->
+      <div class="grid grid-cols-6 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Active</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">18</p>
+          <p class="text-xs text-teal mt-1 flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">trending_up</span> +3 this week</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Completed</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">7</p>
+          <p class="text-xs text-teal mt-1">this week</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Overdue</p>
+          <p class="text-3xl font-bold text-red-500 mt-1">3</p>
+          <p class="text-xs text-red-400 mt-1">needs attention</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Avg Time</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">4.2<span class="text-lg">d</span></p>
+          <p class="text-xs text-teal mt-1 flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">trending_down</span> -0.3 days</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">On-Time</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">87<span class="text-lg">%</span></p>
+          <p class="text-xs text-gray-400 mt-1">completion rate</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">SLA</p>
+          <p class="text-3xl font-bold text-teal mt-1">92<span class="text-lg">%</span></p>
+          <p class="text-xs text-teal mt-1">compliance</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6 mb-6">
+        <!-- Alerts Panel -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-1">
+            <span class="material-symbols-outlined text-red-500 text-sm">notifications_active</span> Alerts
+          </h2>
+          <div class="space-y-3">
+            <div class="p-3 bg-red-50 rounded-lg">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-red-500 text-sm mt-0.5">error</span>
+                <div>
+                  <p class="text-xs font-medium text-red-800">WF-2024-006 is overdue</p>
+                  <p class="text-[10px] text-red-600">NovaTech Solutions &bull; Finance Approval stuck 14 days</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-amber-50 rounded-lg">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5">warning</span>
+                <div>
+                  <p class="text-xs font-medium text-amber-800">WF-2024-003 at risk</p>
+                  <p class="text-[10px] text-amber-600">Coastal Health Systems &bull; Fieldwork delayed 21 days</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-amber-50 rounded-lg">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5">warning</span>
+                <div>
+                  <p class="text-xs font-medium text-amber-800">WF-2024-017 approaching SLA</p>
+                  <p class="text-[10px] text-amber-600">Meridian Holdings &bull; Internal Review &bull; 2 days remaining</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-blue-50 rounded-lg">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-blue-500 text-sm mt-0.5">info</span>
+                <div>
+                  <p class="text-xs font-medium text-blue-800">3 new workflows this week</p>
+                  <p class="text-[10px] text-blue-600">WF-2024-016, WF-2024-017, WF-2024-018</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow Distribution -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">By Type</h2>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-gray-700 font-medium">Client Onboarding</span><span class="text-gray-500">5</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-brand rounded-full" style="width:28%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-gray-700 font-medium">Proposal Pipeline</span><span class="text-gray-500">4</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal rounded-full" style="width:22%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-gray-700 font-medium">Document Review</span><span class="text-gray-500">3</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:17%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-gray-700 font-medium">Project Approval</span><span class="text-gray-500">3</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-purple-400 rounded-full" style="width:17%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-gray-700 font-medium">Compliance Audit</span><span class="text-gray-500">3</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-red-400 rounded-full" style="width:17%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff Workload -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Staff Workload</h2>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-brand rounded-full flex items-center justify-center text-white text-[10px] font-bold">SC</div>
+              <div class="flex-1">
+                <div class="flex justify-between text-xs mb-0.5"><span class="font-medium text-gray-700">Sarah Chen</span><span class="text-gray-500">4 active</span></div>
+                <div class="h-1.5 bg-gray-100 rounded-full"><div class="h-full bg-red-400 rounded-full" style="width:92%"></div></div>
+                <p class="text-[10px] text-red-500 mt-0.5">92% utilized</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-teal rounded-full flex items-center justify-center text-white text-[10px] font-bold">MR</div>
+              <div class="flex-1">
+                <div class="flex justify-between text-xs mb-0.5"><span class="font-medium text-gray-700">Marcus Rivera</span><span class="text-gray-500">3 active</span></div>
+                <div class="h-1.5 bg-gray-100 rounded-full"><div class="h-full bg-amber-400 rounded-full" style="width:88%"></div></div>
+                <p class="text-[10px] text-amber-500 mt-0.5">88% utilized</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">AP</div>
+              <div class="flex-1">
+                <div class="flex justify-between text-xs mb-0.5"><span class="font-medium text-gray-700">Aisha Patel</span><span class="text-gray-500">3 active</span></div>
+                <div class="h-1.5 bg-gray-100 rounded-full"><div class="h-full bg-red-400 rounded-full" style="width:95%"></div></div>
+                <p class="text-[10px] text-red-500 mt-0.5">95% utilized</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">JO</div>
+              <div class="flex-1">
+                <div class="flex justify-between text-xs mb-0.5"><span class="font-medium text-gray-700">James O'Brien</span><span class="text-gray-500">3 active</span></div>
+                <div class="h-1.5 bg-gray-100 rounded-full"><div class="h-full bg-teal rounded-full" style="width:72%"></div></div>
+                <p class="text-[10px] text-teal mt-0.5">72% utilized</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">DM</div>
+              <div class="flex-1">
+                <div class="flex justify-between text-xs mb-0.5"><span class="font-medium text-gray-700">Diana Morales</span><span class="text-gray-500">3 active</span></div>
+                <div class="h-1.5 bg-gray-100 rounded-full"><div class="h-full bg-amber-400 rounded-full" style="width:85%"></div></div>
+                <p class="text-[10px] text-amber-500 mt-0.5">85% utilized</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">TW</div>
+              <div class="flex-1">
+                <div class="flex justify-between text-xs mb-0.5"><span class="font-medium text-gray-700">Tyler Washington</span><span class="text-gray-500">2 active</span></div>
+                <div class="h-1.5 bg-gray-100 rounded-full"><div class="h-full bg-teal rounded-full" style="width:78%"></div></div>
+                <p class="text-[10px] text-teal mt-0.5">78% utilized</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Workflows Table -->
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Recent Workflows</h2>
+          <a href="admin-workflows" class="text-xs text-teal hover:text-teal-light font-medium">View All &rarr;</a>
+        </div>
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr class="text-xs text-gray-500 uppercase tracking-wider">
+              <th class="text-left px-5 py-3 font-semibold">Reference</th>
+              <th class="text-left px-5 py-3 font-semibold">Type</th>
+              <th class="text-left px-5 py-3 font-semibold">Client</th>
+              <th class="text-left px-5 py-3 font-semibold">Stage</th>
+              <th class="text-left px-5 py-3 font-semibold">Assigned</th>
+              <th class="text-left px-5 py-3 font-semibold">Days</th>
+              <th class="text-left px-5 py-3 font-semibold">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-5 py-3 font-medium text-brand">WF-2024-001</td>
+              <td class="px-5 py-3 text-gray-700">Client Onboarding</td>
+              <td class="px-5 py-3 text-gray-700">Meridian Holdings</td>
+              <td class="px-5 py-3 text-gray-700">Contract Review</td>
+              <td class="px-5 py-3 text-gray-700">Sarah Chen</td>
+              <td class="px-5 py-3 text-gray-700">12</td>
+              <td class="px-5 py-3"><span class="text-xs font-medium text-teal bg-teal/10 px-2 py-0.5 rounded">On Track</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-5 py-3 font-medium text-brand">WF-2024-006</td>
+              <td class="px-5 py-3 text-gray-700">Project Approval</td>
+              <td class="px-5 py-3 text-gray-700">NovaTech Solutions</td>
+              <td class="px-5 py-3 text-gray-700">Finance Approval</td>
+              <td class="px-5 py-3 text-gray-700">Tyler Washington</td>
+              <td class="px-5 py-3 text-red-500 font-medium">14</td>
+              <td class="px-5 py-3"><span class="text-xs font-medium text-red-600 bg-red-50 px-2 py-0.5 rounded">Overdue</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-5 py-3 font-medium text-brand">WF-2024-003</td>
+              <td class="px-5 py-3 text-gray-700">Compliance Audit</td>
+              <td class="px-5 py-3 text-gray-700">Coastal Health Systems</td>
+              <td class="px-5 py-3 text-gray-700">Fieldwork</td>
+              <td class="px-5 py-3 text-gray-700">Aisha Patel</td>
+              <td class="px-5 py-3 text-amber-500 font-medium">21</td>
+              <td class="px-5 py-3"><span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded">At Risk</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-5 py-3 font-medium text-brand">WF-2024-018</td>
+              <td class="px-5 py-3 text-gray-700">Client Onboarding</td>
+              <td class="px-5 py-3 text-gray-700">Apex Manufacturing</td>
+              <td class="px-5 py-3 text-gray-700">Initial Contact</td>
+              <td class="px-5 py-3 text-gray-700">James O'Brien</td>
+              <td class="px-5 py-3 text-gray-700">1</td>
+              <td class="px-5 py-3"><span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">New</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="location.href='admin-workflow-detail.html'">
+              <td class="px-5 py-3 font-medium text-brand">WF-2024-008</td>
+              <td class="px-5 py-3 text-gray-700">Client Onboarding</td>
+              <td class="px-5 py-3 text-gray-700">Pinnacle Finance</td>
+              <td class="px-5 py-3 text-gray-700">Kickoff</td>
+              <td class="px-5 py-3 text-gray-700">Sarah Chen</td>
+              <td class="px-5 py-3 text-gray-700">18</td>
+              <td class="px-5 py-3"><span class="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

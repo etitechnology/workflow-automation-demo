@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/ETI_icon.png"/>
+<link rel="apple-touch-icon" href="/ETI_icon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Task Management - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:'#1e3a5f','brand-light':'#2a5080',teal:'#0d9488','teal-light':'#14b8a6'},fontFamily:{display:['Manrope','sans-serif'],body:['Inter','sans-serif']}}}}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen">
+<!-- Unified Top Nav -->
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2 flex-shrink-0">
+    <span class="material-symbols-outlined text-teal-light">hub</span>
+    <span class="font-display font-bold text-lg">Pacific Consulting Group</span>
+  </a>
+  <div class="flex items-center gap-1.5">
+    <a href="service-request" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">description</span>Service Request</a>
+    <a href="status" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">search</span>Check Status</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="portal-dashboard" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">person</span>Client Portal</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="./" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 text-white font-medium text-sm"><span class="material-symbols-outlined text-sm">admin_panel_settings</span>Admin Panel</a>
+    <span class="w-px h-5 bg-white/20 mx-1.5"></span>
+    <a href="login" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white/70 hover:bg-white/10 hover:text-white transition text-sm"><span class="material-symbols-outlined text-sm">login</span>Sign In</a>
+  </div>
+</nav>
+
+<div class="flex min-h-[calc(100vh-52px)]">
+  <aside class="w-56 bg-white border-r border-gray-100 py-4 flex-shrink-0">
+    <div class="px-4 mb-2"><p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Administration</p></div>
+    <nav class="space-y-0.5 px-2">
+      <a href="./" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">dashboard</span> Dashboard</a>
+      <a href="admin-workflows" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">account_tree</span> Workflows</a>
+      <a href="admin-builder" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">construction</span> Builder</a>
+      <a href="admin-tasks" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-brand/5 text-brand font-medium text-sm"><span class="material-symbols-outlined text-lg">task_alt</span> Tasks</a>
+      <a href="admin-analytics" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">analytics</span> Analytics</a>
+      <a href="admin-settings" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">settings</span> Settings</a>
+    </nav>
+  </aside>
+
+  <main class="flex-1 p-6 overflow-auto">
+    <div class="max-w-7xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="font-display text-2xl font-bold text-gray-900">Task Board</h1>
+          <p class="text-sm text-gray-500">24 tasks across all workflows</p>
+        </div>
+        <div class="flex gap-2">
+          <select class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
+            <option>All Staff</option>
+            <option>Sarah Chen</option>
+            <option>Marcus Rivera</option>
+            <option>Aisha Patel</option>
+            <option>James O'Brien</option>
+            <option>Diana Morales</option>
+            <option>Tyler Washington</option>
+          </select>
+          <button class="bg-brand text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-light flex items-center gap-1"><span class="material-symbols-outlined text-sm">add</span> Add Task</button>
+        </div>
+      </div>
+
+      <!-- Kanban Board -->
+      <div class="grid grid-cols-4 gap-4">
+        <!-- To Do Column -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 bg-gray-400 rounded-full"></span> To Do
+            </h3>
+            <span class="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">8</span>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-001</span>
+                <span class="text-[10px] font-medium text-red-600 bg-red-50 px-1.5 py-0.5 rounded">High</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Address contract redlines</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Contract Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div>
+                <span class="text-[10px] text-gray-400">Due Apr 4</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-001</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Obtain final signatures</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Contract Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div>
+                <span class="text-[10px] text-gray-400">Due Apr 5</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-004</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Schedule discovery meeting</p>
+              <p class="text-[10px] text-gray-400 mb-2">Summit Logistics &bull; Needs Assessment</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">JO</div>
+                <span class="text-[10px] text-gray-400">Due Apr 2</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-012</span>
+                <span class="text-[10px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">Low</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Qualify lead and gather requirements</p>
+              <p class="text-[10px] text-gray-400 mb-2">Summit Logistics &bull; Lead</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">JO</div>
+                <span class="text-[10px] text-gray-400">Due Apr 3</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-015</span>
+                <span class="text-[10px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">Low</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Draft initial document</p>
+              <p class="text-[10px] text-gray-400 mb-2">GreenLeaf Organics &bull; Draft</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">TW</div>
+                <span class="text-[10px] text-gray-400">Due Apr 4</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-016</span>
+                <span class="text-[10px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">Low</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Review project request form</p>
+              <p class="text-[10px] text-gray-400 mb-2">Pinnacle Finance &bull; Request</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-pink-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">DM</div>
+                <span class="text-[10px] text-gray-400">Due Apr 2</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-018</span>
+                <span class="text-[10px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">Low</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Send welcome email to Apex Mfg</p>
+              <p class="text-[10px] text-gray-400 mb-2">Apex Manufacturing &bull; Initial Contact</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">JO</div>
+                <span class="text-[10px] text-gray-400">Due Apr 1</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-009</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Prepare audit documentation checklist</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Preparation</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">AP</div>
+                <span class="text-[10px] text-gray-400">Due Apr 3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- In Progress Column -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 bg-amber-400 rounded-full"></span> In Progress
+            </h3>
+            <span class="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">6</span>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white rounded-lg border-l-4 border-l-red-500 border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-001</span>
+                <span class="text-[10px] font-medium text-red-600 bg-red-50 px-1.5 py-0.5 rounded">High</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Await client legal review</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Contract Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div>
+                <span class="text-[10px] text-red-500 font-medium">Due Apr 2</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border-l-4 border-l-red-500 border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-006</span>
+                <span class="text-[10px] font-medium text-red-600 bg-red-50 px-1.5 py-0.5 rounded">Overdue</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Obtain finance team approval</p>
+              <p class="text-[10px] text-gray-400 mb-2">NovaTech Solutions &bull; Finance Approval</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">TW</div>
+                <span class="text-[10px] text-red-500 font-medium">Overdue 7d</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-003</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Conduct on-site fieldwork interviews</p>
+              <p class="text-[10px] text-gray-400 mb-2">Coastal Health &bull; Fieldwork</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">AP</div>
+                <span class="text-[10px] text-amber-500">Due Apr 5</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-007</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Draft proposal for GreenLeaf</p>
+              <p class="text-[10px] text-gray-400 mb-2">GreenLeaf Organics &bull; Proposal Draft</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-teal rounded-full flex items-center justify-center text-white text-[8px] font-bold">MR</div>
+                <span class="text-[10px] text-gray-400">Due Apr 6</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-017</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">At Risk</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Complete internal review of proposal</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Internal Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div>
+                <span class="text-[10px] text-amber-500 font-medium">Due Apr 1</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-013</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Draft proposal for Brightfield</p>
+              <p class="text-[10px] text-gray-400 mb-2">Brightfield Properties &bull; Proposal</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-teal rounded-full flex items-center justify-center text-white text-[8px] font-bold">MR</div>
+                <span class="text-[10px] text-gray-400">Due Apr 4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Column -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 bg-blue-400 rounded-full"></span> Review
+            </h3>
+            <span class="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">4</span>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-002</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Client reviewing final proposal</p>
+              <p class="text-[10px] text-gray-400 mb-2">Apex Manufacturing &bull; Client Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-teal rounded-full flex items-center justify-center text-white text-[8px] font-bold">MR</div>
+                <span class="text-[10px] text-gray-400">Due Apr 3</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-005</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Review document for accuracy</p>
+              <p class="text-[10px] text-gray-400 mb-2">Brightfield Properties &bull; Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-pink-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">DM</div>
+                <span class="text-[10px] text-gray-400">Due Apr 2</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-010</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Final approval sign-off needed</p>
+              <p class="text-[10px] text-gray-400 mb-2">Apex Manufacturing &bull; Approval</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-pink-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">DM</div>
+                <span class="text-[10px] text-gray-400">Due Apr 1</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 hover:shadow-md transition cursor-pointer">
+              <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-011</span>
+                <span class="text-[10px] font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Medium</span>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Manager review of project request</p>
+              <p class="text-[10px] text-gray-400 mb-2">Coastal Health &bull; Manager Review</p>
+              <div class="flex items-center justify-between">
+                <div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div>
+                <span class="text-[10px] text-gray-400">Due Apr 3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Done Column -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 bg-teal rounded-full"></span> Done
+            </h3>
+            <span class="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">6</span>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 opacity-60">
+              <div class="flex items-center gap-1.5 mb-2"><span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-008</span></div>
+              <p class="text-sm font-medium text-gray-900 mb-1 line-through">Complete kickoff meeting</p>
+              <p class="text-[10px] text-gray-400 mb-2">Pinnacle Finance &bull; Kickoff</p>
+              <div class="flex items-center justify-between"><div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div><span class="text-[10px] text-teal">Completed</span></div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 opacity-60">
+              <div class="flex items-center gap-1.5 mb-2"><span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-001</span></div>
+              <p class="text-sm font-medium text-gray-900 mb-1 line-through">Draft master services agreement</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Contract Review</p>
+              <div class="flex items-center justify-between"><div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div><span class="text-[10px] text-teal">Mar 28</span></div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 opacity-60">
+              <div class="flex items-center gap-1.5 mb-2"><span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-001</span></div>
+              <p class="text-sm font-medium text-gray-900 mb-1 line-through">Send contract to client</p>
+              <p class="text-[10px] text-gray-400 mb-2">Meridian Holdings &bull; Contract Review</p>
+              <div class="flex items-center justify-between"><div class="w-5 h-5 bg-brand rounded-full flex items-center justify-center text-white text-[8px] font-bold">SC</div><span class="text-[10px] text-teal">Mar 28</span></div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 opacity-60">
+              <div class="flex items-center gap-1.5 mb-2"><span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-014</span></div>
+              <p class="text-sm font-medium text-gray-900 mb-1 line-through">Draft compliance report</p>
+              <p class="text-[10px] text-gray-400 mb-2">NovaTech Solutions &bull; Reporting</p>
+              <div class="flex items-center justify-between"><div class="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">AP</div><span class="text-[10px] text-teal">Mar 29</span></div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 opacity-60">
+              <div class="flex items-center gap-1.5 mb-2"><span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-002</span></div>
+              <p class="text-sm font-medium text-gray-900 mb-1 line-through">Submit proposal to Apex</p>
+              <p class="text-[10px] text-gray-400 mb-2">Apex Manufacturing &bull; Client Review</p>
+              <div class="flex items-center justify-between"><div class="w-5 h-5 bg-teal rounded-full flex items-center justify-center text-white text-[8px] font-bold">MR</div><span class="text-[10px] text-teal">Mar 27</span></div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-100 p-3.5 opacity-60">
+              <div class="flex items-center gap-1.5 mb-2"><span class="text-[10px] font-bold text-brand bg-brand/10 px-1.5 py-0.5 rounded">WF-003</span></div>
+              <p class="text-sm font-medium text-gray-900 mb-1 line-through">Complete audit preparation</p>
+              <p class="text-[10px] text-gray-400 mb-2">Coastal Health &bull; Fieldwork</p>
+              <div class="flex items-center justify-between"><div class="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center text-white text-[8px] font-bold">AP</div><span class="text-[10px] text-teal">Mar 25</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
