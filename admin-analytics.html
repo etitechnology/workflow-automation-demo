@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Analytics - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:'#1e3a5f','brand-light':'#2a5080',teal:'#0d9488','teal-light':'#14b8a6'},fontFamily:{display:['Manrope','sans-serif'],body:['Inter','sans-serif']}}}}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen">
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="index.html" class="flex items-center gap-2"><span class="material-symbols-outlined text-teal-light">hub</span><span class="font-display font-bold text-lg">Pacific Consulting Group</span></a>
+  <div class="flex items-center gap-6 text-sm">
+    <a href="index.html" class="hover:text-teal-light transition">Public Site</a>
+    <a href="portal-dashboard.html" class="hover:text-teal-light transition">Client Portal</a>
+    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-white/20"><div class="w-7 h-7 bg-teal rounded-full flex items-center justify-center text-xs font-bold">SC</div><span class="text-sm">Sarah Chen</span></div>
+    <a href="login.html" class="hover:text-teal-light transition text-xs">Logout</a>
+  </div>
+</nav>
+
+<div class="flex min-h-[calc(100vh-52px)]">
+  <aside class="w-56 bg-white border-r border-gray-100 py-4 flex-shrink-0">
+    <div class="px-4 mb-2"><p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Administration</p></div>
+    <nav class="space-y-0.5 px-2">
+      <a href="admin-home.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">dashboard</span> Dashboard</a>
+      <a href="admin-workflows.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">account_tree</span> Workflows</a>
+      <a href="admin-builder.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">construction</span> Builder</a>
+      <a href="admin-tasks.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">task_alt</span> Tasks</a>
+      <a href="admin-analytics.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-brand/5 text-brand font-medium text-sm"><span class="material-symbols-outlined text-lg">analytics</span> Analytics</a>
+      <a href="admin-settings.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 text-sm"><span class="material-symbols-outlined text-lg">settings</span> Settings</a>
+    </nav>
+  </aside>
+
+  <main class="flex-1 p-6 overflow-auto">
+    <div class="max-w-6xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="font-display text-2xl font-bold text-gray-900">Analytics & Reports</h1>
+          <p class="text-sm text-gray-500">Performance data for the last 90 days</p>
+        </div>
+        <div class="flex gap-2">
+          <select class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
+            <option>Last 30 days</option>
+            <option selected>Last 90 days</option>
+            <option>Last 12 months</option>
+          </select>
+          <button class="border border-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">download</span> Export
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Row -->
+      <div class="grid grid-cols-5 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Total Workflows</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">125</p>
+          <p class="text-xs text-teal mt-1 flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">trending_up</span> +12% vs prev</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Completed</p>
+          <p class="text-3xl font-bold text-teal mt-1">107</p>
+          <p class="text-xs text-gray-400 mt-1">85.6% completion</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">On-Time Rate</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">87<span class="text-lg">%</span></p>
+          <p class="text-xs text-teal mt-1 flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">trending_up</span> +3% vs prev</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Avg Completion</p>
+          <p class="text-3xl font-bold text-gray-900 mt-1">4.2<span class="text-lg">d</span></p>
+          <p class="text-xs text-teal mt-1 flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">trending_down</span> -0.5 days</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">SLA Compliance</p>
+          <p class="text-3xl font-bold text-teal mt-1">92<span class="text-lg">%</span></p>
+          <p class="text-xs text-gray-400 mt-1">target: 90%</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <!-- Monthly Volume Chart -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Monthly Workflow Volume</h2>
+          <div class="flex items-end gap-8 h-48 px-4">
+            <div class="flex-1 flex flex-col items-center gap-1">
+              <div class="w-full bg-brand/20 rounded-t relative" style="height:168px">
+                <div class="absolute inset-x-0 bottom-0 bg-brand rounded-t" style="height:168px"></div>
+              </div>
+              <span class="text-xs text-gray-500 font-medium">Jan</span>
+              <span class="text-xs text-gray-400">42</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center gap-1">
+              <div class="w-full bg-brand/20 rounded-t relative" style="height:152px">
+                <div class="absolute inset-x-0 bottom-0 bg-brand rounded-t" style="height:152px"></div>
+              </div>
+              <span class="text-xs text-gray-500 font-medium">Feb</span>
+              <span class="text-xs text-gray-400">38</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center gap-1">
+              <div class="w-full bg-brand/20 rounded-t relative" style="height:180px">
+                <div class="absolute inset-x-0 bottom-0 bg-teal rounded-t" style="height:180px"></div>
+              </div>
+              <span class="text-xs text-gray-500 font-medium">Mar</span>
+              <span class="text-xs text-gray-400">45</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completion by Type -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Avg Completion Time by Type</h2>
+          <div class="space-y-4 mt-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="text-gray-700">Document Review</span><span class="font-bold text-gray-900">1.8 days</span></div>
+              <div class="h-4 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal rounded-full flex items-center justify-end pr-2" style="width:15%"><span class="text-[9px] text-white font-bold">1.8d</span></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="text-gray-700">Project Approval</span><span class="font-bold text-gray-900">2.3 days</span></div>
+              <div class="h-4 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal rounded-full flex items-center justify-end pr-2" style="width:19%"><span class="text-[9px] text-white font-bold">2.3d</span></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="text-gray-700">Client Onboarding</span><span class="font-bold text-gray-900">4.1 days</span></div>
+              <div class="h-4 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-brand rounded-full flex items-center justify-end pr-2" style="width:34%"><span class="text-[9px] text-white font-bold">4.1d</span></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="text-gray-700">Proposal Pipeline</span><span class="font-bold text-gray-900">8.5 days</span></div>
+              <div class="h-4 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full flex items-center justify-end pr-2" style="width:71%"><span class="text-[9px] text-white font-bold">8.5d</span></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="text-gray-700">Compliance Audit</span><span class="font-bold text-gray-900">12.2 days</span></div>
+              <div class="h-4 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-red-400 rounded-full flex items-center justify-end pr-2" style="width:100%"><span class="text-[9px] text-white font-bold">12.2d</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <!-- Bottleneck Stages -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Bottleneck Stages (Avg Wait Time)</h2>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+              <span class="material-symbols-outlined text-red-500">warning</span>
+              <div class="flex-1">
+                <div class="flex justify-between"><p class="text-sm font-medium text-gray-900">Legal Review</p><p class="text-sm font-bold text-red-500">3.1 days</p></div>
+                <div class="mt-1 h-1.5 bg-red-100 rounded-full"><div class="h-full bg-red-400 rounded-full" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg">
+              <span class="material-symbols-outlined text-amber-500">warning</span>
+              <div class="flex-1">
+                <div class="flex justify-between"><p class="text-sm font-medium text-gray-900">Finance Approval</p><p class="text-sm font-bold text-amber-500">2.8 days</p></div>
+                <div class="mt-1 h-1.5 bg-amber-100 rounded-full"><div class="h-full bg-amber-400 rounded-full" style="width:90%"></div></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="material-symbols-outlined text-gray-400">schedule</span>
+              <div class="flex-1">
+                <div class="flex justify-between"><p class="text-sm font-medium text-gray-900">Client Review</p><p class="text-sm font-bold text-gray-700">2.1 days</p></div>
+                <div class="mt-1 h-1.5 bg-gray-200 rounded-full"><div class="h-full bg-gray-400 rounded-full" style="width:68%"></div></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="material-symbols-outlined text-gray-400">schedule</span>
+              <div class="flex-1">
+                <div class="flex justify-between"><p class="text-sm font-medium text-gray-900">Fieldwork</p><p class="text-sm font-bold text-gray-700">1.9 days</p></div>
+                <div class="mt-1 h-1.5 bg-gray-200 rounded-full"><div class="h-full bg-gray-400 rounded-full" style="width:61%"></div></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="material-symbols-outlined text-gray-400">schedule</span>
+              <div class="flex-1">
+                <div class="flex justify-between"><p class="text-sm font-medium text-gray-900">Proposal Draft</p><p class="text-sm font-bold text-gray-700">1.5 days</p></div>
+                <div class="mt-1 h-1.5 bg-gray-200 rounded-full"><div class="h-full bg-gray-400 rounded-full" style="width:48%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff Utilization -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Staff Utilization (90-day avg)</h2>
+          <div class="space-y-4">
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <div class="w-7 h-7 bg-purple-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">AP</div>
+                <div class="flex-1 flex justify-between"><span class="text-sm font-medium text-gray-700">Aisha Patel</span><span class="text-sm font-bold text-red-500">95%</span></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full ml-10"><div class="h-full bg-red-400 rounded-full" style="width:95%"></div></div>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <div class="w-7 h-7 bg-brand rounded-full flex items-center justify-center text-white text-[10px] font-bold">SC</div>
+                <div class="flex-1 flex justify-between"><span class="text-sm font-medium text-gray-700">Sarah Chen</span><span class="text-sm font-bold text-amber-500">92%</span></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full ml-10"><div class="h-full bg-amber-400 rounded-full" style="width:92%"></div></div>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <div class="w-7 h-7 bg-teal rounded-full flex items-center justify-center text-white text-[10px] font-bold">MR</div>
+                <div class="flex-1 flex justify-between"><span class="text-sm font-medium text-gray-700">Marcus Rivera</span><span class="text-sm font-bold text-amber-500">88%</span></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full ml-10"><div class="h-full bg-amber-400 rounded-full" style="width:88%"></div></div>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <div class="w-7 h-7 bg-pink-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">DM</div>
+                <div class="flex-1 flex justify-between"><span class="text-sm font-medium text-gray-700">Diana Morales</span><span class="text-sm font-bold text-gray-700">85%</span></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full ml-10"><div class="h-full bg-brand rounded-full" style="width:85%"></div></div>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <div class="w-7 h-7 bg-orange-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">TW</div>
+                <div class="flex-1 flex justify-between"><span class="text-sm font-medium text-gray-700">Tyler Washington</span><span class="text-sm font-bold text-gray-700">78%</span></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full ml-10"><div class="h-full bg-teal rounded-full" style="width:78%"></div></div>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <div class="w-7 h-7 bg-indigo-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">JO</div>
+                <div class="flex-1 flex justify-between"><span class="text-sm font-medium text-gray-700">James O'Brien</span><span class="text-sm font-bold text-teal">72%</span></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full ml-10"><div class="h-full bg-teal rounded-full" style="width:72%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client Workflow Table -->
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <div class="px-5 py-4 border-b border-gray-100">
+          <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Workflows by Client (90 days)</h2>
+        </div>
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr class="text-xs text-gray-500 uppercase tracking-wider">
+              <th class="text-left px-5 py-3 font-semibold">Client</th>
+              <th class="text-left px-5 py-3 font-semibold">Total</th>
+              <th class="text-left px-5 py-3 font-semibold">Completed</th>
+              <th class="text-left px-5 py-3 font-semibold">Active</th>
+              <th class="text-left px-5 py-3 font-semibold">Avg Time</th>
+              <th class="text-left px-5 py-3 font-semibold">On-Time %</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">Meridian Holdings</td>
+              <td class="px-5 py-3">28</td>
+              <td class="px-5 py-3 text-teal">24</td>
+              <td class="px-5 py-3">4</td>
+              <td class="px-5 py-3">3.8 days</td>
+              <td class="px-5 py-3"><span class="text-teal font-medium">91%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">Apex Manufacturing</td>
+              <td class="px-5 py-3">22</td>
+              <td class="px-5 py-3 text-teal">18</td>
+              <td class="px-5 py-3">4</td>
+              <td class="px-5 py-3">4.5 days</td>
+              <td class="px-5 py-3"><span class="text-teal font-medium">86%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">Coastal Health Systems</td>
+              <td class="px-5 py-3">18</td>
+              <td class="px-5 py-3 text-teal">14</td>
+              <td class="px-5 py-3">4</td>
+              <td class="px-5 py-3">5.2 days</td>
+              <td class="px-5 py-3"><span class="text-amber-500 font-medium">79%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">NovaTech Solutions</td>
+              <td class="px-5 py-3">16</td>
+              <td class="px-5 py-3 text-teal">13</td>
+              <td class="px-5 py-3">3</td>
+              <td class="px-5 py-3">4.8 days</td>
+              <td class="px-5 py-3"><span class="text-amber-500 font-medium">81%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">Summit Logistics</td>
+              <td class="px-5 py-3">14</td>
+              <td class="px-5 py-3 text-teal">11</td>
+              <td class="px-5 py-3">3</td>
+              <td class="px-5 py-3">3.5 days</td>
+              <td class="px-5 py-3"><span class="text-teal font-medium">93%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">Brightfield Properties</td>
+              <td class="px-5 py-3">12</td>
+              <td class="px-5 py-3 text-teal">9</td>
+              <td class="px-5 py-3">3</td>
+              <td class="px-5 py-3">3.9 days</td>
+              <td class="px-5 py-3"><span class="text-teal font-medium">89%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">GreenLeaf Organics</td>
+              <td class="px-5 py-3">9</td>
+              <td class="px-5 py-3 text-teal">7</td>
+              <td class="px-5 py-3">2</td>
+              <td class="px-5 py-3">4.1 days</td>
+              <td class="px-5 py-3"><span class="text-teal font-medium">88%</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-5 py-3 font-medium text-gray-900">Pinnacle Finance</td>
+              <td class="px-5 py-3">6</td>
+              <td class="px-5 py-3 text-teal">5</td>
+              <td class="px-5 py-3">1</td>
+              <td class="px-5 py-3">3.2 days</td>
+              <td class="px-5 py-3"><span class="text-teal font-medium">100%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

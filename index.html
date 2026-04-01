@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Service Request - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: '#1e3a5f',
+        'brand-light': '#2a5080',
+        teal: '#0d9488',
+        'teal-light': '#14b8a6',
+      },
+      fontFamily: {
+        display: ['Manrope', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen">
+<!-- Top Bar -->
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="index.html" class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-teal-light">hub</span>
+    <span class="font-display font-bold text-lg">Pacific Consulting Group</span>
+  </a>
+  <div class="flex items-center gap-6 text-sm">
+    <a href="index.html" class="text-teal-light font-semibold">Service Request</a>
+    <a href="status.html" class="hover:text-teal-light transition">Check Status</a>
+    <a href="login.html" class="hover:text-teal-light transition">Sign In</a>
+  </div>
+</nav>
+
+<div class="max-w-4xl mx-auto px-6 py-12">
+  <!-- Header -->
+  <div class="text-center mb-10">
+    <h1 class="font-display text-3xl font-bold text-gray-900 mb-2">Submit a Service Request</h1>
+    <p class="text-gray-500 max-w-lg mx-auto">Fill out the form below to initiate a new workflow. Our team will review your request and respond within 1 business day.</p>
+  </div>
+
+  <!-- Progress Steps -->
+  <div class="flex items-center justify-center gap-2 mb-10">
+    <div class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-teal text-white text-sm font-bold flex items-center justify-center">1</span>
+      <span class="text-sm font-medium text-gray-900">Contact Info</span>
+    </div>
+    <div class="w-12 h-px bg-gray-300"></div>
+    <div class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 text-sm font-bold flex items-center justify-center">2</span>
+      <span class="text-sm text-gray-400">Request Details</span>
+    </div>
+    <div class="w-12 h-px bg-gray-300"></div>
+    <div class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 text-sm font-bold flex items-center justify-center">3</span>
+      <span class="text-sm text-gray-400">Review & Submit</span>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+    <form class="space-y-8">
+      <!-- Section: Contact Information -->
+      <div>
+        <h2 class="font-display text-lg font-bold text-gray-900 mb-1">Contact Information</h2>
+        <p class="text-sm text-gray-500 mb-5">Tell us who you are so we can follow up on your request.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">First Name</label>
+            <input type="text" placeholder="Jane" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Last Name</label>
+            <input type="text" placeholder="Smith" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Email Address</label>
+            <input type="email" placeholder="jane@company.com" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Phone Number</label>
+            <input type="tel" placeholder="(555) 123-4567" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Company / Organization</label>
+            <input type="text" placeholder="Meridian Holdings" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-gray-100"/>
+
+      <!-- Section: Request Details -->
+      <div>
+        <h2 class="font-display text-lg font-bold text-gray-900 mb-1">Request Details</h2>
+        <p class="text-sm text-gray-500 mb-5">Describe what you need help with.</p>
+        <div class="space-y-5">
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Service Type</label>
+            <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal bg-white">
+              <option>Select a service type...</option>
+              <option>Client Onboarding</option>
+              <option>Project Approval</option>
+              <option>Document Review</option>
+              <option>Proposal Pipeline</option>
+              <option>Compliance Audit</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Priority Level</label>
+            <div class="flex gap-3">
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="priority" class="peer hidden" value="low"/>
+                <div class="peer-checked:border-teal peer-checked:bg-teal/5 border-2 border-gray-200 rounded-lg p-3 text-center transition">
+                  <span class="text-sm font-medium text-gray-700">Low</span>
+                  <p class="text-xs text-gray-400 mt-0.5">5-7 business days</p>
+                </div>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="priority" class="peer hidden" value="medium" checked/>
+                <div class="peer-checked:border-teal peer-checked:bg-teal/5 border-2 border-gray-200 rounded-lg p-3 text-center transition">
+                  <span class="text-sm font-medium text-gray-700">Medium</span>
+                  <p class="text-xs text-gray-400 mt-0.5">2-3 business days</p>
+                </div>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="priority" class="peer hidden" value="high"/>
+                <div class="peer-checked:border-teal peer-checked:bg-teal/5 border-2 border-gray-200 rounded-lg p-3 text-center transition">
+                  <span class="text-sm font-medium text-gray-700">High</span>
+                  <p class="text-xs text-gray-400 mt-0.5">Within 24 hours</p>
+                </div>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="priority" class="peer hidden" value="critical"/>
+                <div class="peer-checked:border-red-500 peer-checked:bg-red-50 border-2 border-gray-200 rounded-lg p-3 text-center transition">
+                  <span class="text-sm font-medium text-gray-700">Critical</span>
+                  <p class="text-xs text-gray-400 mt-0.5">Immediate</p>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Subject</label>
+            <input type="text" placeholder="Brief summary of your request" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Description</label>
+            <textarea rows="5" placeholder="Provide as much detail as possible..." class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Attachments</label>
+            <div class="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center hover:border-teal/50 transition cursor-pointer">
+              <span class="material-symbols-outlined text-gray-400 text-3xl mb-2 block">cloud_upload</span>
+              <p class="text-sm text-gray-600">Drag files here or <span class="text-teal font-medium">browse</span></p>
+              <p class="text-xs text-gray-400 mt-1">PDF, DOC, XLS, PNG up to 25MB each</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-gray-100"/>
+
+      <!-- Section: Preferred Timeline -->
+      <div>
+        <h2 class="font-display text-lg font-bold text-gray-900 mb-1">Additional Information</h2>
+        <p class="text-sm text-gray-500 mb-5">Optional details to help us prioritize your request.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Desired Completion Date</label>
+            <input type="date" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal"/>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Budget Range</label>
+            <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal bg-white">
+              <option>Not applicable</option>
+              <option>Under $5,000</option>
+              <option>$5,000 - $15,000</option>
+              <option>$15,000 - $50,000</option>
+              <option>$50,000+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-4">
+        <p class="text-xs text-gray-400">All fields marked are required</p>
+        <button type="button" onclick="alert('Demo: Your request has been submitted! Reference #WF-2024-019')" class="bg-brand text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-light transition text-sm">Submit Request</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="text-center py-6 text-xs text-gray-400">
+  <p>Pacific Consulting Group Workflow Automation System &mdash; Demo by ETI Technology</p>
+</footer>
+</body>
+</html>

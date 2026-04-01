@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign In - Pacific Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: '#1e3a5f',
+        'brand-light': '#2a5080',
+        teal: '#0d9488',
+        'teal-light': '#14b8a6',
+      },
+      fontFamily: {
+        display: ['Manrope', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-gray-50 font-body min-h-screen flex flex-col">
+<!-- Top Bar -->
+<nav class="bg-brand text-white px-6 py-3 flex items-center justify-between">
+  <a href="index.html" class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-teal-light">hub</span>
+    <span class="font-display font-bold text-lg">Pacific Consulting Group</span>
+  </a>
+  <div class="flex items-center gap-6 text-sm">
+    <a href="index.html" class="hover:text-teal-light transition">Service Request</a>
+    <a href="status.html" class="hover:text-teal-light transition">Check Status</a>
+    <a href="login.html" class="text-teal-light font-semibold">Sign In</a>
+  </div>
+</nav>
+
+<div class="flex-1 flex items-center justify-center px-4 py-16">
+  <div class="bg-white rounded-xl shadow-lg max-w-md w-full p-10">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-brand/10 rounded-xl mb-4">
+        <span class="material-symbols-outlined text-brand text-3xl">hub</span>
+      </div>
+      <h1 class="font-display text-2xl font-bold text-gray-900">Welcome Back</h1>
+      <p class="text-gray-500 text-sm mt-1">Sign in to your workflow portal</p>
+    </div>
+
+    <form class="space-y-5">
+      <div>
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Email Address</label>
+        <input type="email" placeholder="you@company.com" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal transition"/>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Password</label>
+        <input type="password" placeholder="Enter your password" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-teal focus:border-teal transition"/>
+      </div>
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 text-gray-600">
+          <input type="checkbox" class="rounded border-gray-300 text-teal focus:ring-teal"/>
+          Remember me
+        </label>
+        <a href="#" class="text-teal hover:text-teal-light font-medium">Forgot password?</a>
+      </div>
+      <a href="portal-dashboard.html" class="block w-full bg-brand text-white text-center py-3 rounded-lg font-semibold hover:bg-brand-light transition text-sm">Sign In</a>
+    </form>
+
+    <div class="mt-6 pt-6 border-t border-gray-100 text-center">
+      <p class="text-sm text-gray-500">Admin access? <a href="admin-home.html" class="text-teal hover:text-teal-light font-medium">Go to Admin Portal</a></p>
+    </div>
+
+    <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+      <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-2">Demo Accounts</p>
+      <div class="space-y-1 text-xs text-gray-500">
+        <p><span class="font-medium text-gray-700">Client:</span> client@meridianholdings.com / demo123</p>
+        <p><span class="font-medium text-gray-700">Admin:</span> sarah.chen@pacificcg.com / demo123</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center py-4 text-xs text-gray-400">
+  <p>Pacific Consulting Group Workflow Automation System &mdash; Demo by ETI Technology</p>
+</footer>
+</body>
+</html>
